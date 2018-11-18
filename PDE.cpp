@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <iostream>
 using namespace std;
 
 #define max 51		//Longitud maxima
