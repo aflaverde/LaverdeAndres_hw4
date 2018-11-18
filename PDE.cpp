@@ -12,10 +12,9 @@ int main()
    
    //i: tiempo
    //j: posicion
-   
-	double 
+
 	double dx=0.03;
-	double K=1.62;		//Conductividad termica
+	double K=162;		//Conductividad termica
 	double C=820;		//calor especifico
 	double rho=2710;	//Densidad
 	double eta=(K)/(C*rho*dx*dx);
@@ -29,7 +28,7 @@ int main()
 	}
 
 	for(j=0; j<max; j++){
-		if(j>=20 && j<=(max-1)) {
+		if(j>=20 && j<=30) {
 			T[0][j] = 100.0;	// Condiciones iniciales
 		}
 	}
@@ -50,15 +49,15 @@ int main()
 		}
 	}
    
-   for (i=0; i<tmax ; i++)         // write data gnuplot 3D format 
-   {
-      for (j=0; j<max; j++) 
-      {
-         fprintf(output, "%f,",T[i][j]);
-      }
-      fprintf(output, "\n");    // empty line for gnuplot
-   }
-   printf("data stored in laplace-calor.dat\n");
-   fclose(output);
+	for (i=0; i<tmax ; i++)         // write data gnuplot 3D format 
+	{
+		for (j=0; j<max; j++) 
+		{
+			fprintf(output, "%f,",T[i][j]);
+		}
+		fprintf(output, "\n");    // empty line for gnuplot
+	}
+	printf("data stored in laplace-calor.dat\n");
+	fclose(output);
 	return 0;
 }//MAIN
