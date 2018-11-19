@@ -1,3 +1,5 @@
+//Andres Laverde - PDE.cpp HW4
+
 #include <stdio.h>
 #include <math.h>
 #include <iostream>
@@ -5,6 +7,7 @@ using namespace std;
 
 #define max 51		//Longitud maxima
 #define tmax 3000	//tiempo maximo de propagacion
+#define PI 3.14159
 
 //Funciones
 void fronteras10(double *T);
@@ -135,6 +138,7 @@ int main()
 		{
 			for(j=0; j<max; j++)	// direccion de x
 			{
+				T[i][0]=cos(i*PI/180)*50;	//Condiciones periodicas de -50 a 50
 				T[i+1][j] = T[i][j]+(eta*(T[i][j+1]+T[i][j-1]-2.0*T[i][j]));
 			}
 		}

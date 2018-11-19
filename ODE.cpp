@@ -1,3 +1,5 @@
+//Andres Laverde - ODE.cpp HW4
+
 #include<iostream>
 #include <stdio.h>
 #include <math.h>
@@ -12,7 +14,7 @@ double acc_x(double g, double c, double m, double x0, double v0, double ang, dou
 	double v=v0+x/dt;
 	double vx=v*cos(ang);	//Vel. en x
 	double vy=v*sin(ang);	//Vel. en y
-	double a_x = -(c/m)*(sqrt(vx*vx + vy*vy)*vx);
+	double a_x = -(c/m)*(sqrt(vx*vx + vy*vy)*vx); //Aceleracion en x
 	return a_x;
 }//acc_x
 
