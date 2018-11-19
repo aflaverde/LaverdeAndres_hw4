@@ -1,7 +1,9 @@
 #Andres Laverde - makefile HW4
 
-Resultados_hw4.pdf: ODE1.png PDE1.png Resultados_hw.tex
-	pdflatex Resultados_hw.tex
+all: Resultados_hw4.pdf
+
+Resultados_hw4.pdf: ODE1.png PDE1.png Resultados_hw4.tex
+	pdflatex Resultados_hw4.tex
 
 #Genera la imagen 3 de PDE
 PDE3.png: pde-period.dat Plots_hw4.py
