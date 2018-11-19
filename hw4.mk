@@ -3,8 +3,14 @@
 Resultados_hw4.pdf: ODE1.png PDE1.png Resultados_hw.tex
 	pdflatex Resultados_hw.tex
 
+#Genera la imagen 3 de PDE
+PDE3.png: pde-period.dat Plots_hw4.py
+	python3 Plots_hw4.py
+#Genera la imagen 2 de PDE
+PDE2.png: pde-abiertas.dat Plots_hw4.py
+	python3 Plots_hw4.py
 #Genera la imagen 1 de PDE
-PDE1.png: pde.dat Plots_hw4.py
+PDE1.png: pde-fijas.dat Plots_hw4.py
 	python3 Plots_hw4.py
 
 #Genera la imagen 1 de ODE
