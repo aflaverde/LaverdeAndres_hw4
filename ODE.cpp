@@ -39,7 +39,10 @@ double vel_y(double g, double c, double m, double x0, double v0, double ang, dou
 	return vy;
 }//vel_y
 
-double rk4(double func, double g, double c, double m, double x0, double v0, double ang, double dt){
+double rk4(double vx, double vy, double g, double c, double m, double x0, double v0, double ang, double dt){
+	double k1, k2, k3, k4;
+	double 
+	
 }//rk4
 
 

@@ -1,22 +1,10 @@
 #Andres Laverde - makefile HW4
 
-all: Resultados_hw4.pdf
-
-Resultados_hw4.pdf: ODE1.png PDE1.png Resultados_hw4.tex
+Resultados_hw4.pdf: Resultados_hw4.tex
 	pdflatex Resultados_hw4.tex
 
 #Genera la imagen 3 de PDE
-PDE3.png: pde-period.dat Plots_hw4.py
-	python3 Plots_hw4.py
-#Genera la imagen 2 de PDE
-PDE2.png: pde-abiertas.dat Plots_hw4.py
-	python3 Plots_hw4.py
-#Genera la imagen 1 de PDE
-PDE1.png: pde-fijas.dat Plots_hw4.py
-	python3 Plots_hw4.py
-
-#Genera la imagen 1 de ODE
-ODE1.png: ode.dat Plots_hw4.py
+Esultados_hw4.tex: pde-period.dat Plots_hw4.py
 	python3 Plots_hw4.py
 
 #Genera los datos de PDE
@@ -28,3 +16,6 @@ pde.dat: PDE.cpp
 ode.dat: ODE.cpp
 	g++ ODE.cpp -o ode.out
 	./ode.out
+
+clean: 
+	rm *.png *.aux *.log *.out *.txt *.dat
