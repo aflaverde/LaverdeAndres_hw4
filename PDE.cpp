@@ -112,47 +112,6 @@ int main()
 	printf("Datos guardados en pde-abiertas.dat\n");
 	fclose(output2);
 	
-/////////////////////////////////////////////////////////////////////
-					/*Caso 3 - periodicas*/
-	
-	FILE *output3;      //Abre el archivo y guarda los datos en el archivo pde-periodicas.dat
-	output3 = fopen("pde-period.dat","w");
-
-	for(i=0; i<tmax; i++)	// limpia el array dejando todo en 0
-	{   
-		for (j=0; j<max; j++) T[i][j] = 0;
-	}
-
-	for(j=0; j<max; j++){
-		if(j>=20 && j<=30) {
-			T[0][j] = 100.0;	// Condiciones iniciales
-		}
-	}
-
-	/*Caso 1*/
-	for(iter=0; iter<1000; iter++)	//iteraciones
-	{
-		//i=tiempo
-		//j=x
-		for(i=0; i<tmax; i++)	// avance del tiempo
-		{
-			for(j=0; j<max; j++)	// direccion de x
-			{
-				T[i][0]=cos(i*PI/180)*50;	//Condiciones periodicas de -50 a 50
-				T[i+1][j] = T[i][j]+(eta*(T[i][j+1]+T[i][j-1]-2.0*T[i][j]));
-			}
-		}
-	}
-   
-	for (i=0; i<tmax ; i++)         // write data gnuplot 3D format 
-	{
-		for (j=0; j<max; j++) 
-		{
-			fprintf(output3, "%f,",T[i][j]);
-		}
-		fprintf(output3, "\n");    // empty line for gnuplot
-	}
-	printf("Datos guardados en pde-period.dat\n");
-	fclose(output3);
+	return 0;
 }//MAIN
 
